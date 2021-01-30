@@ -1,0 +1,113 @@
+:root{
+    --bg-color:#fff;
+    --font-color:#000;
+
+}
+body{
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    grid-template-rows: 1fr 1fr;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.img-container{
+    width: 120px;
+    height: 120px;
+}
+.img-login{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.title{
+    background-color: slategray;
+    width: 50%;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 3em;
+    color: var(--bg-color);
+}
+.form{
+    width: 50%;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    overflow: hidden;
+
+}
+.field{
+    position: relative;
+    margin: 1em 0;
+    width: 100%;
+    
+}
+.field-text{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    border-bottom: 1px solid var(--font-color);
+    
+}
+.field-text span{
+    transition: font-size .3s linear;
+    transition: transform  .3s cubic-bezier(1,.03,.38,1.85);
+    
+}
+
+.field-text::after{
+    content: '';
+    display: block;
+    position: relative;
+    bottom: -1px;
+    left: 0;
+    border-bottom: 3px solid skyblue;
+    transform: translateX(-100%);
+    transition: transform .3s linear;
+}
+.field-input{
+    height: 30px;
+    outline: none;
+    border: none;
+    padding-top: 30px;
+}
+
+.field-input:focus + .field-text span, .field-input:valid + .field-text span{
+    display: block;
+    color: skyblue;
+    font-size: .9em;
+
+    transform: translateY(-180%);
+    
+}
+.field-input:focus + .field-text::after, .fi{
+transform: translateX(0%);
+}
+.field-input:valid{
+    font-size: 1.3em;
+}
+
+.send{
+    display: flex;
+    justify-content: center;
+   
+}
+.submit{
+    display: block;
+    width: 260px;
+    height: 30px;
+    background-color: skyblue;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    
+}
